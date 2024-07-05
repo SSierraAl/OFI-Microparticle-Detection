@@ -29,6 +29,7 @@ from TAB_Home_Read import *
 from SignalAdquisition import *
 from DAQ_Reader_Global import *
 from TAB_Scanning import *
+from TAB_Server import *
 
 import pyqtgraph as pg
 import sys
@@ -37,8 +38,13 @@ import keyboard
 
 import subprocess as sp
 
+from queue import Queue
+
+# Shared data structure server and app
+shared_queue = Queue()
+
 # MAIN WINDOW
-# ///////////////////////////////////////////////////////////////``
+# ///////////////////////////////////////////////////////////////
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -48,6 +54,7 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
         self.ui = UI_MainWindow()
         self.ui.setup_ui(self)
+    
 
         # LOAD SETTINGS
         # ///////////////////////////////////////////////////////////////
@@ -58,6 +65,8 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
         self.hide_grips = True # Show/Hide resize grips
         SetupMainWindow.setup_gui(self)
+
+
 
         # ZABER TAB
         # ///////////////////////////////////////////////////////////////
@@ -75,6 +84,11 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
         Set_Scanning_Tab(self)
 
+        # SET SERVER TAB
+        # ///////////////////////////////////////////////////////////////
+        self.Server_Instance = Server_Init_Bokeh(self, shared_queue)
+
+        #Server_Init_Bokeh.start_bokeh_server(self)
 
         # ///////////////////////////////////////////////////////////////
         # SHOW MAIN WINDOW
@@ -111,6 +125,14 @@ class MainWindow(QMainWindow):
             self.ui.left_menu.select_only_one(btn.objectName())
             MainFunctions.set_page(self, self.ui.load_pages.page_calib)
 
+        # SERVER CONECTION
+        # ///////////////////////////////////////////////////////////////
+        if btn.objectName() == "btn_server":
+            # Select Menu
+            self.ui.left_menu.select_only_one(btn.objectName())
+            MainFunctions.set_page(self, self.ui.load_pages.page_2)
+
+
 
         # ZABER CONECTION
         # ///////////////////////////////////////////////////////////////
@@ -143,6 +165,17 @@ class MainWindow(QMainWindow):
         self.dragPos = event.globalPos()
 
 
+
+
+    # BOKEH SERVER
+    # ///////////////////////////////////////////////////////////////
+    #Override function to stop the thread at the same time that the app is closed
+    def closeEvent(self, event):
+        Server_Init_Bokeh.stop_thread(self.Server_Instance)
+        event.accept()
+
+
+    
 # SETTINGS WHEN TO START
 # Set the initial class and also additional parameters of the "QApplication" class
 # ///////////////////////////////////////////////////////////////

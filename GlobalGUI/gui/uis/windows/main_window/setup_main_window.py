@@ -77,9 +77,9 @@ class SetupMainWindow:
         },
         {
             "btn_icon" : "icon_attachment.svg",
-            "btn_id" : "btn_colors",
-            "btn_text" : "Color Detection",
-            "btn_tooltip" : "Color",
+            "btn_id" : "btn_server",
+            "btn_text" : "Particle Analysis",
+            "btn_tooltip" : "Particle",
             "show_top" : True,
             "is_active" : False
         },
