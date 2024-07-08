@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_pagesalymfX.ui'
+## Form generated from reading UI file 'main_pagesKLvfox.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.2
 ##
@@ -1340,6 +1340,16 @@ class Ui_MainPages(object):
 
         self.gridLayout_4.addWidget(self.line_directory_cam, 4, 2, 1, 1)
 
+        self.but_additional_1_cam = QPushButton(self.page_cam)
+        self.but_additional_1_cam.setObjectName(u"but_additional_1_cam")
+
+        self.gridLayout_4.addWidget(self.but_additional_1_cam, 7, 0, 1, 1)
+
+        self.but_additional_2_cam = QPushButton(self.page_cam)
+        self.but_additional_2_cam.setObjectName(u"but_additional_2_cam")
+
+        self.gridLayout_4.addWidget(self.but_additional_2_cam, 7, 2, 1, 1)
+
 
         self.verticalLayout_14.addLayout(self.gridLayout_4)
 
@@ -1514,5 +1524,7 @@ class Ui_MainPages(object):
         self.but_trigger_previous_cam.setText(QCoreApplication.translate("MainPages", u"Trigger Previous", None))
         self.label_51.setText(QCoreApplication.translate("MainPages", u"Directory:", None))
         self.line_directory_cam.setText(QCoreApplication.translate("MainPages", u"'~/Desktop/Test/Snapshots'", None))
+        self.but_additional_1_cam.setText(QCoreApplication.translate("MainPages", u"Additional 1", None))
+        self.but_additional_2_cam.setText(QCoreApplication.translate("MainPages", u"Aditional 2", None))
     # retranslateUi
 

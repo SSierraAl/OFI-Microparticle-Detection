@@ -2102,6 +2102,20 @@
                  </property>
                 </widget>
                </item>
+               <item row="7" column="0">
+                <widget class="QPushButton" name="but_additional_1_cam">
+                 <property name="text">
+                  <string>Additional 1</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="2">
+                <widget class="QPushButton" name="but_additional_2_cam">
+                 <property name="text">
+                  <string>Aditional 2</string>
+                 </property>
+                </widget>
+               </item>
               </layout>
              </item>
              <item>
