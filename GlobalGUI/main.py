@@ -30,7 +30,7 @@ from SignalAdquisition import *
 from DAQ_Reader_Global import *
 from TAB_Scanning import *
 from TAB_Server import *
-
+from TAB_Camera import *
 import pyqtgraph as pg
 import sys
 from PySide6.QtCore import QTimer
@@ -88,7 +88,11 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
         self.Server_Instance = Server_Init_Bokeh(self, shared_queue)
 
-        #Server_Init_Bokeh.start_bokeh_server(self)
+        
+        # SET CAMERA TAB
+        # ///////////////////////////////////////////////////////////////
+        self.Camera_Instance = FrameCapture(self)
+
 
         # ///////////////////////////////////////////////////////////////
         # SHOW MAIN WINDOW
@@ -132,7 +136,12 @@ class MainWindow(QMainWindow):
             self.ui.left_menu.select_only_one(btn.objectName())
             MainFunctions.set_page(self, self.ui.load_pages.page_2)
 
-
+        # CAMERA CONECTION
+        # ///////////////////////////////////////////////////////////////
+        if btn.objectName() == "btn_camera":
+            # Select Menu
+            self.ui.left_menu.select_only_one(btn.objectName())
+            MainFunctions.set_page(self, self.ui.load_pages.page_cam)
 
         # ZABER CONECTION
         # ///////////////////////////////////////////////////////////////
@@ -172,6 +181,7 @@ class MainWindow(QMainWindow):
     #Override function to stop the thread at the same time that the app is closed
     def closeEvent(self, event):
         Server_Init_Bokeh.stop_thread(self.Server_Instance)
+        FrameCapture.but_stop_capture_cam(self.Camera_Instance)
         event.accept()
 
 

@@ -76,6 +76,14 @@ class SetupMainWindow:
             "is_active" : False
         },
         {
+            "btn_icon" : "icon_widgets.svg",
+            "btn_id" : "btn_camera",
+            "btn_text" : "Camera",
+            "btn_tooltip" : "Camera",
+            "show_top" : True,
+            "is_active" : False
+        },
+        {
             "btn_icon" : "icon_attachment.svg",
             "btn_id" : "btn_server",
             "btn_text" : "Particle Analysis",

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_pagesfeAPkG.ui'
+## Form generated from reading UI file 'main_pagesalymfX.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.2
 ##
@@ -25,10 +25,8 @@ class Ui_MainPages(object):
         if not MainPages.objectName():
             MainPages.setObjectName(u"MainPages")
         MainPages.resize(1145, 820)
-        self.main_pages_layout = QVBoxLayout(MainPages)
-        self.main_pages_layout.setSpacing(0)
-        self.main_pages_layout.setObjectName(u"main_pages_layout")
-        self.main_pages_layout.setContentsMargins(5, 5, 5, 5)
+        self.verticalLayout = QVBoxLayout(MainPages)
+        self.verticalLayout.setObjectName(u"verticalLayout")
         self.pages = QStackedWidget(MainPages)
         self.pages.setObjectName(u"pages")
         self.page_1 = QWidget()
@@ -1215,13 +1213,161 @@ class Ui_MainPages(object):
         self.verticalLayout_11.addLayout(self.verticalLayout_10)
 
         self.pages.addWidget(self.page_calib)
+        self.page_cam = QWidget()
+        self.page_cam.setObjectName(u"page_cam")
+        self.verticalLayout_13 = QVBoxLayout(self.page_cam)
+        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
+        self.verticalLayout_12 = QVBoxLayout()
+        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.label_44 = QLabel(self.page_cam)
+        self.label_44.setObjectName(u"label_44")
+        sizePolicy.setHeightForWidth(self.label_44.sizePolicy().hasHeightForWidth())
+        self.label_44.setSizePolicy(sizePolicy)
 
-        self.main_pages_layout.addWidget(self.pages)
+        self.verticalLayout_12.addWidget(self.label_44)
+
+        self.horizontalLayout_22 = QHBoxLayout()
+        self.horizontalLayout_22.setObjectName(u"horizontalLayout_22")
+        self.verticalLayout_14 = QVBoxLayout()
+        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
+        self.verticalLayout_14.setContentsMargins(10, 10, 10, 10)
+        self.line_16 = QFrame(self.page_cam)
+        self.line_16.setObjectName(u"line_16")
+        self.line_16.setFrameShape(QFrame.HLine)
+        self.line_16.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_14.addWidget(self.line_16)
+
+        self.label_45 = QLabel(self.page_cam)
+        self.label_45.setObjectName(u"label_45")
+        sizePolicy.setHeightForWidth(self.label_45.sizePolicy().hasHeightForWidth())
+        self.label_45.setSizePolicy(sizePolicy)
+
+        self.verticalLayout_14.addWidget(self.label_45)
+
+        self.line_15 = QFrame(self.page_cam)
+        self.line_15.setObjectName(u"line_15")
+        self.line_15.setFrameShape(QFrame.HLine)
+        self.line_15.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_14.addWidget(self.line_15)
+
+        self.gridLayout_4 = QGridLayout()
+        self.gridLayout_4.setObjectName(u"gridLayout_4")
+        self.gridLayout_4.setContentsMargins(20, 20, 20, 10)
+        self.but_stop_cam = QPushButton(self.page_cam)
+        self.but_stop_cam.setObjectName(u"but_stop_cam")
+
+        self.gridLayout_4.addWidget(self.but_stop_cam, 6, 0, 1, 1)
+
+        self.line_resolution_cam = QLineEdit(self.page_cam)
+        self.line_resolution_cam.setObjectName(u"line_resolution_cam")
+        sizePolicy5.setHeightForWidth(self.line_resolution_cam.sizePolicy().hasHeightForWidth())
+        self.line_resolution_cam.setSizePolicy(sizePolicy5)
+
+        self.gridLayout_4.addWidget(self.line_resolution_cam, 0, 2, 1, 1)
+
+        self.but_start_cam = QPushButton(self.page_cam)
+        self.but_start_cam.setObjectName(u"but_start_cam")
+
+        self.gridLayout_4.addWidget(self.but_start_cam, 5, 0, 1, 1)
+
+        self.line_frame_rate_cam = QLineEdit(self.page_cam)
+        self.line_frame_rate_cam.setObjectName(u"line_frame_rate_cam")
+        sizePolicy5.setHeightForWidth(self.line_frame_rate_cam.sizePolicy().hasHeightForWidth())
+        self.line_frame_rate_cam.setSizePolicy(sizePolicy5)
+
+        self.gridLayout_4.addWidget(self.line_frame_rate_cam, 1, 2, 1, 1)
+
+        self.label_49 = QLabel(self.page_cam)
+        self.label_49.setObjectName(u"label_49")
+
+        self.gridLayout_4.addWidget(self.label_49, 2, 0, 1, 1)
+
+        self.label_50 = QLabel(self.page_cam)
+        self.label_50.setObjectName(u"label_50")
+
+        self.gridLayout_4.addWidget(self.label_50, 3, 0, 1, 1)
+
+        self.but_trigger_next_cam = QPushButton(self.page_cam)
+        self.but_trigger_next_cam.setObjectName(u"but_trigger_next_cam")
+
+        self.gridLayout_4.addWidget(self.but_trigger_next_cam, 5, 2, 1, 1)
+
+        self.line_trigger_frame_cam = QLineEdit(self.page_cam)
+        self.line_trigger_frame_cam.setObjectName(u"line_trigger_frame_cam")
+        sizePolicy5.setHeightForWidth(self.line_trigger_frame_cam.sizePolicy().hasHeightForWidth())
+        self.line_trigger_frame_cam.setSizePolicy(sizePolicy5)
+
+        self.gridLayout_4.addWidget(self.line_trigger_frame_cam, 2, 2, 1, 1)
+
+        self.label_47 = QLabel(self.page_cam)
+        self.label_47.setObjectName(u"label_47")
+
+        self.gridLayout_4.addWidget(self.label_47, 0, 1, 1, 1)
+
+        self.label_46 = QLabel(self.page_cam)
+        self.label_46.setObjectName(u"label_46")
+
+        self.gridLayout_4.addWidget(self.label_46, 0, 0, 1, 1)
+
+        self.line_partition_count_cam = QLineEdit(self.page_cam)
+        self.line_partition_count_cam.setObjectName(u"line_partition_count_cam")
+        sizePolicy5.setHeightForWidth(self.line_partition_count_cam.sizePolicy().hasHeightForWidth())
+        self.line_partition_count_cam.setSizePolicy(sizePolicy5)
+
+        self.gridLayout_4.addWidget(self.line_partition_count_cam, 3, 2, 1, 1)
+
+        self.label_48 = QLabel(self.page_cam)
+        self.label_48.setObjectName(u"label_48")
+
+        self.gridLayout_4.addWidget(self.label_48, 1, 0, 1, 1)
+
+        self.but_trigger_previous_cam = QPushButton(self.page_cam)
+        self.but_trigger_previous_cam.setObjectName(u"but_trigger_previous_cam")
+
+        self.gridLayout_4.addWidget(self.but_trigger_previous_cam, 6, 2, 1, 1)
+
+        self.label_51 = QLabel(self.page_cam)
+        self.label_51.setObjectName(u"label_51")
+
+        self.gridLayout_4.addWidget(self.label_51, 4, 0, 1, 1)
+
+        self.line_directory_cam = QLineEdit(self.page_cam)
+        self.line_directory_cam.setObjectName(u"line_directory_cam")
+        sizePolicy5.setHeightForWidth(self.line_directory_cam.sizePolicy().hasHeightForWidth())
+        self.line_directory_cam.setSizePolicy(sizePolicy5)
+
+        self.gridLayout_4.addWidget(self.line_directory_cam, 4, 2, 1, 1)
+
+
+        self.verticalLayout_14.addLayout(self.gridLayout_4)
+
+        self.verticalSpacer_10 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_14.addItem(self.verticalSpacer_10)
+
+
+        self.horizontalLayout_22.addLayout(self.verticalLayout_14)
+
+        self.horizontalSpacer_11 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_22.addItem(self.horizontalSpacer_11)
+
+
+        self.verticalLayout_12.addLayout(self.horizontalLayout_22)
+
+
+        self.verticalLayout_13.addLayout(self.verticalLayout_12)
+
+        self.pages.addWidget(self.page_cam)
+
+        self.verticalLayout.addWidget(self.pages)
 
 
         self.retranslateUi(MainPages)
 
-        self.pages.setCurrentIndex(1)
+        self.pages.setCurrentIndex(4)
 
 
         QMetaObject.connectSlotsByName(MainPages)
@@ -1351,5 +1497,22 @@ class Ui_MainPages(object):
         self.label_39.setText(QCoreApplication.translate("MainPages", u"Step Y [um]:", None))
         self.Stop_Y_but.setText(QCoreApplication.translate("MainPages", u"Stop Y", None))
         self.lineEdit_speed_ums.setText(QCoreApplication.translate("MainPages", u"500", None))
+        self.label_44.setText(QCoreApplication.translate("MainPages", u"<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:700;\">Camera Settings</span></p></body></html>", None))
+        self.label_45.setText(QCoreApplication.translate("MainPages", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:700;\">Parameters</span></p></body></html>", None))
+        self.but_stop_cam.setText(QCoreApplication.translate("MainPages", u"Stop", None))
+        self.line_resolution_cam.setText(QCoreApplication.translate("MainPages", u"(500,500)", None))
+        self.but_start_cam.setText(QCoreApplication.translate("MainPages", u"Start", None))
+        self.line_frame_rate_cam.setText(QCoreApplication.translate("MainPages", u"5500", None))
+        self.label_49.setText(QCoreApplication.translate("MainPages", u"Trigger Frames:", None))
+        self.label_50.setText(QCoreApplication.translate("MainPages", u"Partition Count:", None))
+        self.but_trigger_next_cam.setText(QCoreApplication.translate("MainPages", u"Trigger Next", None))
+        self.line_trigger_frame_cam.setText(QCoreApplication.translate("MainPages", u"30", None))
+        self.label_47.setText("")
+        self.label_46.setText(QCoreApplication.translate("MainPages", u"Resolution:", None))
+        self.line_partition_count_cam.setText(QCoreApplication.translate("MainPages", u"1", None))
+        self.label_48.setText(QCoreApplication.translate("MainPages", u"Frame Rate:", None))
+        self.but_trigger_previous_cam.setText(QCoreApplication.translate("MainPages", u"Trigger Previous", None))
+        self.label_51.setText(QCoreApplication.translate("MainPages", u"Directory:", None))
+        self.line_directory_cam.setText(QCoreApplication.translate("MainPages", u"'~/Desktop/Test/Snapshots'", None))
     # retranslateUi
 
