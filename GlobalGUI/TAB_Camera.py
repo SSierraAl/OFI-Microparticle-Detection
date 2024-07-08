@@ -24,7 +24,7 @@ from threading import Thread
 # ----- Additional just if possible: (check how to trigger the camera just with the image of the particles!)
 
 
-# There are some bugs still, but i think that that is a good base to work now under this file
+# There are some bugs still, but i think that that this a good template to work now in this file
 
 class WorkerCapture(QObject):
     # Signal to emit captured frames
