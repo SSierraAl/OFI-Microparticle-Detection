@@ -50,7 +50,7 @@ class WorkerCapture(QObject):
             if bool(self.cam._live_cine.is_color.value):    
                 frame = cv2.cvtColor(live_image, cv2.COLOR_RGB2BGR)          
             cv2.imshow('live', frame)  # Use cv2 library to show the image you saved
-            cv2.waitKey(10)
+            cv2.waitKey(100)
             #self.frame_count += 1
             if keyboard.is_pressed('space') or keyboard.is_pressed('esc') or keyboard.is_pressed('enter'):    #close window and break out of loop by pressing space, esc, or enter 
                 cv2.destroyAllWindows
@@ -148,15 +148,16 @@ class FrameCapture(QObject):
         self.snapshots_folder = self.main_window.ui.load_pages.line_directory_cam.text()
         self.cam.resolution = (500,500)
         
-        #Start thread
+        #Start thread (init)
         self.thread_capture.start()
+        #Set running variable in True
         self.worker_capture.startstart()
+        # Call the infinit loop to request the camera
         self.workCAM_requested.emit(0)
 
 
     #Stop timmer
     def but_stop_capture_cam(self):
-        self.worker_capture.running=False
         self.worker_capture.stop()
 
 
