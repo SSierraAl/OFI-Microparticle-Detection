@@ -24,6 +24,23 @@ from threading import Thread
 # ----- Test with real particles to set the maximum speed permited for the experiments# ----- Think that at the end we need to correlate the signal of the laser and the camera in the same time for the particle
 # ----- Additional just if possible: (check how to trigger the camera just with the image of the particles!)
 
+#different parameters of the camera 
+
+#1) Resolution: This determines the detail captured in the image. Higher resolutions capture more detail but can reduce the frame rate and increase data storage requirements.
+
+#2) Frame Rate: This is the number of frames captured per second. Higher frame rates are crucial for capturing fast-moving objects but can reduce the resolution and increase data storage requirements.
+
+#3) Exposure Time: This is the duration the sensor is exposed to light for each frame. Shorter exposure times are better for reducing motion blur but require more light. Longer exposure times can introduce motion blur but work better in low-light conditions.
+
+#4) Partition Count: This refers to the ability to divide the camera's memory into multiple segments or partitions. Each partition acts as a separate storage area where different sequences of captured frames can be saved independently. This feature is particularly useful for various applications and scenarios in high-speed photography.
+
+#This feature allows:
+#Multiple Takes Without Downloading: Capture several high-speed events successively without needing immediate data downloads.
+#Event Segmentation: Store different events in separate memory areas for easier analysis.
+#Efficient Memory Use: Manage memory better by selectively clearing and reusing specific partitions.
+#Avoiding Overwrites: Reduce the risk of overwriting important footage.
+
+
 
 
 class WorkerCapture(QObject):
