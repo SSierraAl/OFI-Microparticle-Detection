@@ -100,7 +100,7 @@ class FrameCapture(QObject):
         if bool(self.cam._live_cine.is_color.value):    
             frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)          
         cv2.imshow('live', frame)  # Use cv2 library to show the image you saved
-        cv2.waitKey(5)
+        cv2.waitKey(1)
 
     @Slot(list)
     def capture_finished(self, frames):
