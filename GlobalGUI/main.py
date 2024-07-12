@@ -181,7 +181,7 @@ class MainWindow(QMainWindow):
     #Override function to stop the thread at the same time that the app is closed
     def closeEvent(self, event):
         Server_Init_Bokeh.stop_thread(self.Server_Instance)
-        FrameCapture.but_stop_capture_cam(self.Camera_Instance)
+        FrameCapture.close_capture_cam(self.Camera_Instance)
         event.accept()
 
 

@@ -1936,7 +1936,7 @@
              <item>
               <widget class="QLabel" name="label_45">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
@@ -1967,34 +1967,7 @@
                <property name="bottomMargin">
                 <number>10</number>
                </property>
-               <item row="6" column="0">
-                <widget class="QPushButton" name="but_stop_cam">
-                 <property name="text">
-                  <string>Stop</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="2">
-                <widget class="QLineEdit" name="line_resolution_cam">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="text">
-                  <string>(500,500)</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="0">
-                <widget class="QPushButton" name="but_start_cam">
-                 <property name="text">
-                  <string>Start</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="2">
+               <item row="2" column="1">
                 <widget class="QLineEdit" name="line_frame_rate_cam">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -2007,29 +1980,15 @@
                  </property>
                 </widget>
                </item>
-               <item row="2" column="0">
-                <widget class="QLabel" name="label_49">
+               <item row="9" column="1">
+                <widget class="QPushButton" name="but_additional_2_cam">
                  <property name="text">
-                  <string>Trigger Frames:</string>
+                  <string>Aditional 2</string>
                  </property>
                 </widget>
                </item>
-               <item row="3" column="0">
-                <widget class="QLabel" name="label_50">
-                 <property name="text">
-                  <string>Partition Count:</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="2">
-                <widget class="QPushButton" name="but_trigger_next_cam">
-                 <property name="text">
-                  <string>Trigger Next</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="2">
-                <widget class="QLineEdit" name="line_trigger_frame_cam">
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="line_resolution_cam_h">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -2037,25 +1996,25 @@
                   </sizepolicy>
                  </property>
                  <property name="text">
-                  <string>30</string>
+                  <string>500</string>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="1">
-                <widget class="QLabel" name="label_47">
+               <item row="8" column="0">
+                <widget class="QPushButton" name="but_stop_cam">
                  <property name="text">
-                  <string/>
+                  <string>Stop</string>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="0">
-                <widget class="QLabel" name="label_46">
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_48">
                  <property name="text">
-                  <string>Resolution:</string>
+                  <string>Frame Rate [fps]:</string>
                  </property>
                 </widget>
                </item>
-               <item row="3" column="2">
+               <item row="5" column="1">
                 <widget class="QLineEdit" name="line_partition_count_cam">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -2068,28 +2027,55 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="0">
-                <widget class="QLabel" name="label_48">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_46">
                  <property name="text">
-                  <string>Frame Rate:</string>
+                  <string>Resolution W [px]:</string>
                  </property>
                 </widget>
                </item>
-               <item row="6" column="2">
-                <widget class="QPushButton" name="but_trigger_previous_cam">
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="line_resolution_cam_w">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
                  <property name="text">
-                  <string>Trigger Previous</string>
+                  <string>500</string>
                  </property>
                 </widget>
                </item>
-               <item row="4" column="0">
+               <item row="6" column="0">
                 <widget class="QLabel" name="label_51">
                  <property name="text">
                   <string>Directory:</string>
                  </property>
                 </widget>
                </item>
-               <item row="4" column="2">
+               <item row="5" column="0">
+                <widget class="QLabel" name="label_50">
+                 <property name="text">
+                  <string>Partition Count:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_47">
+                 <property name="text">
+                  <string>Resolution H [px]</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="0">
+                <widget class="QPushButton" name="but_start_cam">
+                 <property name="text">
+                  <string>Start</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="1">
                 <widget class="QLineEdit" name="line_directory_cam">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -2098,21 +2084,68 @@
                   </sizepolicy>
                  </property>
                  <property name="text">
-                  <string>'~/Desktop/Test/Snapshots'</string>
+                  <string>./Particles_Data/test/</string>
                  </property>
                 </widget>
                </item>
-               <item row="7" column="0">
+               <item row="8" column="1">
+                <widget class="QPushButton" name="but_trigger_previous_cam">
+                 <property name="text">
+                  <string>Trigger Previous</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QLineEdit" name="line_trigger_frame_cam">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>30</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_49">
+                 <property name="text">
+                  <string>Trigger Frames:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="1">
+                <widget class="QPushButton" name="but_trigger_next_cam">
+                 <property name="text">
+                  <string>Trigger Next</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="9" column="0">
                 <widget class="QPushButton" name="but_additional_1_cam">
                  <property name="text">
                   <string>Additional 1</string>
                  </property>
                 </widget>
                </item>
-               <item row="7" column="2">
-                <widget class="QPushButton" name="but_additional_2_cam">
+               <item row="3" column="0">
+                <widget class="QLabel" name="label_52">
                  <property name="text">
-                  <string>Aditional 2</string>
+                  <string>Exposure Time [us]</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QLineEdit" name="line_exposure_cam">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>100</string>
                  </property>
                 </widget>
                </item>
@@ -2134,17 +2167,87 @@
             </layout>
            </item>
            <item>
-            <spacer name="horizontalSpacer_11">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
+            <layout class="QVBoxLayout" name="verticalLayout_15">
+             <item>
+              <spacer name="horizontalSpacer_11">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="Layout_Cam">
+               <item>
+                <spacer name="horizontalSpacer_12">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_16">
+                 <property name="leftMargin">
+                  <number>10</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>10</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>10</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>10</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="image_label">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_13">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_14">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
            </item>
           </layout>
          </item>
