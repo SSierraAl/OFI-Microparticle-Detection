@@ -1980,7 +1980,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="9" column="1">
+               <item row="8" column="1">
                 <widget class="QPushButton" name="but_additional_2_cam">
                  <property name="text">
                   <string>Aditional 2</string>
@@ -2000,7 +2000,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="8" column="0">
+               <item row="7" column="0">
                 <widget class="QPushButton" name="but_stop_cam">
                  <property name="text">
                   <string>Stop</string>
@@ -2011,19 +2011,6 @@
                 <widget class="QLabel" name="label_48">
                  <property name="text">
                   <string>Frame Rate [fps]:</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="1">
-                <widget class="QLineEdit" name="line_partition_count_cam">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="text">
-                  <string>1</string>
                  </property>
                 </widget>
                </item>
@@ -2047,17 +2034,10 @@
                  </property>
                 </widget>
                </item>
-               <item row="6" column="0">
+               <item row="5" column="0">
                 <widget class="QLabel" name="label_51">
                  <property name="text">
                   <string>Directory:</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="0">
-                <widget class="QLabel" name="label_50">
-                 <property name="text">
-                  <string>Partition Count:</string>
                  </property>
                 </widget>
                </item>
@@ -2068,14 +2048,27 @@
                  </property>
                 </widget>
                </item>
-               <item row="7" column="0">
+               <item row="3" column="1">
+                <widget class="QLineEdit" name="line_exposure_cam">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>100</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="0">
                 <widget class="QPushButton" name="but_start_cam">
                  <property name="text">
                   <string>Start</string>
                  </property>
                 </widget>
                </item>
-               <item row="6" column="1">
+               <item row="5" column="1">
                 <widget class="QLineEdit" name="line_directory_cam">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -2088,7 +2081,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="8" column="1">
+               <item row="7" column="1">
                 <widget class="QPushButton" name="but_trigger_previous_cam">
                  <property name="text">
                   <string>Trigger Previous</string>
@@ -2115,17 +2108,10 @@
                  </property>
                 </widget>
                </item>
-               <item row="7" column="1">
+               <item row="6" column="1">
                 <widget class="QPushButton" name="but_trigger_next_cam">
                  <property name="text">
                   <string>Trigger Next</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="9" column="0">
-                <widget class="QPushButton" name="but_additional_1_cam">
-                 <property name="text">
-                  <string>Additional 1</string>
                  </property>
                 </widget>
                </item>
@@ -2136,16 +2122,10 @@
                  </property>
                 </widget>
                </item>
-               <item row="3" column="1">
-                <widget class="QLineEdit" name="line_exposure_cam">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
+               <item row="8" column="0">
+                <widget class="QPushButton" name="but_additional_1_cam">
                  <property name="text">
-                  <string>100</string>
+                  <string>Additional 1</string>
                  </property>
                 </widget>
                </item>

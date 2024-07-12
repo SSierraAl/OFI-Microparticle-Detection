@@ -101,6 +101,8 @@ class WorkerCapture(QObject):
         p = convert_to_Qt_format.scaled(self.resolution[0], self.resolution[1], Qt.AspectRatioMode.KeepAspectRatio)
         return QPixmap.fromImage(p)
 
+
+    #Consider do it in other Thread !!!!! 
     def save_img(self,Group_Images):
         os.makedirs(self.snapshots_folder, exist_ok=True)
         timestamp = time.strftime("%Y%m%d_%H%M")
@@ -152,7 +154,7 @@ class FrameCapture(QObject):
 
         # Initialize Phantom object and connect to the camera
         self.ph = Phantom()                                       # Make a Phantom object
-        self.cam_count = self.ph.camera_count                          # Check for connected cameras
+        self.cam_count = self.ph.camera_count                     # Check for connected cameras
 
 
         #Interfaz buttons connections #######################################
@@ -176,10 +178,10 @@ class FrameCapture(QObject):
         self.ph.discover(print_list=True)  #[name, serial number, model, camera number]
 
         #Update parameters based on the GUI
+        self.cam.partition_count  = 1
         self.cam.frame_rate = int(self.main_window.ui.load_pages.line_frame_rate_cam.text())
         #Number of images to save
         self.trigger_frames = int(self.main_window.ui.load_pages.line_trigger_frame_cam.text())
-        self.cam.partition_count  = 1
         self.snapshots_folder = self.main_window.ui.load_pages.line_directory_cam.text()
         self.cam.resolution = (int(self.main_window.ui.load_pages.line_resolution_cam_w.text()),int(self.main_window.ui.load_pages.line_resolution_cam_h.text()))
         self.cam.exposure =int(self.main_window.ui.load_pages.line_exposure_cam.text())
@@ -187,15 +189,17 @@ class FrameCapture(QObject):
         #Resize display widget
         self.main_window.ui.load_pages.image_label.resize(self.cam.resolution[0],self.cam.resolution[1])
 
-        # Check parameters
+
+
+
+        # Check parameters ###################################################################
         res = self.cam.resolution                                 # Getting resolution
-        print('{:d} x {:d} Resolution'.format(res[0], res[1]))
-        frame_rate = self.cam.frame_rate                          # Getting frame rate
-        print("%s Framerate(fps)" % (frame_rate))
-        part_count = self.cam.partition_count                     # Get partition count 
-        print("%s Partition_count" % (part_count))
-        exposure = self.cam.exposure                              # Get exposure time
-        print("%s exposure(us)" % (exposure))
+        self.main_window.ui.load_pages.line_resolution_cam_w.setText(str(res[0])) 
+        self.main_window.ui.load_pages.line_resolution_cam_h.setText(str(res[1])) 
+        frame_rate = self.cam.frame_rate   
+        self.main_window.ui.load_pages.line_frame_rate_cam.setText(str(frame_rate))                       
+        exposure = self.cam.exposure    
+        self.main_window.ui.load_pages.line_exposure_cam.setText(str(exposure))
 
         # Start recording
         self.cam.record()                                    # Start recording
