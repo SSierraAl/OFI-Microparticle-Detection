@@ -151,7 +151,6 @@ class FrameCapture(QObject):
 
         self.global_counter_cam=0
         self.main_window=main_window
-
         # Initialize Phantom object and connect to the camera
         self.ph = Phantom()                                       # Make a Phantom object
         self.cam_count = self.ph.camera_count                     # Check for connected cameras
@@ -166,7 +165,6 @@ class FrameCapture(QObject):
         self.main_window.ui.load_pages.but_trigger_next_cam.clicked.connect(self.trigger_particle_signal)
         #Capture the previous X frames
         self.main_window.ui.load_pages.but_trigger_previous_cam.clicked.connect(self.trigger_particle_signal_prev)
-
 
 
     #Start all the process, and read the parameters, be carefull after we need to be able to stop everything
@@ -190,8 +188,6 @@ class FrameCapture(QObject):
         self.main_window.ui.load_pages.image_label.resize(self.cam.resolution[0],self.cam.resolution[1])
 
 
-
-
         # Check parameters ###################################################################
         res = self.cam.resolution                                 # Getting resolution
         self.main_window.ui.load_pages.line_resolution_cam_w.setText(str(res[0])) 
@@ -213,7 +209,6 @@ class FrameCapture(QObject):
         self.thread_capture = QThread()
         self.worker_capture.moveToThread(self.thread_capture)
 
-        
         #Start thread (init)
         self.thread_capture.start()
         #Set running variable in True
@@ -229,15 +224,12 @@ class FrameCapture(QObject):
         self.worker_capture.stop()  
         self.thread_capture.terminate() 
         self.cam.close()
-        #self.ph.close()
-        
 
     #Stop timmer and terminate the thread whtn the app is closed
     def close_capture_cam(self):
         self.worker_capture.stop()        
         self.thread_capture.terminate()
         self.cam.close()
-        #self.ph.close()
 
 
     def trigger_particle_signal(self):
@@ -245,12 +237,4 @@ class FrameCapture(QObject):
 
     def trigger_particle_signal_prev(self):
         self.worker_capture.signal_P_Prev()
-
-
-
-    def get_frames(self):
-        #print(f"FrameCapture: Returning {len(self.frames)} captured frames")
-        return self.frames
-    
-
 
