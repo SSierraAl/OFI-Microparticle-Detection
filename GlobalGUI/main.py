@@ -30,7 +30,7 @@ from SignalAdquisition import *
 from DAQ_Reader_Global import *
 from TAB_Scanning import *
 from TAB_Server import *
-from TAB_Camera import *
+#from TAB_Camera import *
 import pyqtgraph as pg
 import sys
 from PySide6.QtCore import QTimer
@@ -91,7 +91,7 @@ class MainWindow(QMainWindow):
         
         # SET CAMERA TAB
         # ///////////////////////////////////////////////////////////////
-        self.Camera_Instance = FrameCapture(self)
+        #self.Camera_Instance = FrameCapture(self)
 
 
         # ///////////////////////////////////////////////////////////////

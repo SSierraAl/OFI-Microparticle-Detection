@@ -24,11 +24,11 @@ def InsertHomeGraphs(self):
      # Creation of the Voltage Laser Graph
     self.voltageGraph = pg.PlotWidget()
     # Title of the Graph
-    self.voltageGraph.setTitle("Laser Signal")
+    self.voltageGraph.setTitle("Laser Signal", size="13pt", color='k')
     # Label of the bottom
-    self.voltageGraph.setLabel('bottom', "Time(ms)")   
+    self.voltageGraph.setLabel('bottom', "Time(ms)",size="12pt")   
     # left label     
-    self.voltageGraph.setLabel('left', "Voltage (V)")
+    self.voltageGraph.setLabel('left', "Voltage (V)",size="12pt")
     # Set the color of the background
     self.voltageGraph.setBackground('w')
     # Set the color of the line (Blue)
@@ -38,9 +38,9 @@ def InsertHomeGraphs(self):
     #Widget Creation
     # Creation of the FFT Laser Graph
     self.freqGraph = pg.PlotWidget()
-    self.freqGraph.setTitle("Frequency Signal")
-    self.freqGraph.setLabel('bottom', "Freq (Hz)")  
-    self.freqGraph.setLabel('left', "Amplitude")
+    self.freqGraph.setTitle("Frequency Signal", size="13pt", color='k')
+    self.freqGraph.setLabel('bottom', "Freq (Hz)",size="12pt")  
+    self.freqGraph.setLabel('left', "Amplitude",size="12pt")
     self.dataFreq = list(range(1000))  
     self.dataAmp = [randint(0,100) for _ in range(1000)]  
     self.freqGraph.setBackground('w')
@@ -50,9 +50,9 @@ def InsertHomeGraphs(self):
     #Widget Creation
     # Creation of the AVG FFT Laser Graph
     self.freqGraph_AVG = pg.PlotWidget()
-    self.freqGraph_AVG.setTitle("Frequency Signal Avg")
-    self.freqGraph_AVG.setLabel('bottom', "Freq (Hz)")  
-    self.freqGraph_AVG.setLabel('left', "Amplitude")
+    self.freqGraph_AVG.setTitle("Frequency Signal Avg", size="13pt", color='k')
+    self.freqGraph_AVG.setLabel('bottom', "Freq (Hz)",size="12pt")  
+    self.freqGraph_AVG.setLabel('left', "Amplitude",size="12pt")
     self.dataAmp_Freq = list(range(1000))  
     self.dataAmp_Avg = [randint(0,100) for _ in range(1000)]  
     self.freqGraph_AVG.setBackground('w')
