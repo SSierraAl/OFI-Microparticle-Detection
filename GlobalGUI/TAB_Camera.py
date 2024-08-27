@@ -7,7 +7,7 @@ from PySide6.QtGui import QPixmap, QImage
 from PySide6.QtCore import Qt
 
 from Camera_Selector_Fn import camera_selector
-from pyphantom import Phantom
+from pyphantom import Phantom, utils, cine
 from collections import deque
 
 import time
@@ -90,10 +90,10 @@ class WorkerCapture(QObject):
                     self.particle_signal = False
                     self.save_img(self.frames)
 
-            live_image = (live_image / 256).astype(np.uint8)
+            #live_image = (live_image / 256).astype(np.uint8)
             #print("Live Image Data Type:", live_image.dtype)
-            qt_img = self.convert_cv_qt(live_image)
-            self.image_label.setPixmap(qt_img)
+            #qt_img = self.convert_cv_qt(live_image)
+            #self.image_label.setPixmap(qt_img)
 
     def convert_cv_qt(self, rgb_image):
         """Convert image to QPixmap"""
@@ -128,7 +128,36 @@ class WorkerCapture(QObject):
     def signal_P_Prev(self):
         self.global_counter_cam=self.global_counter_cam+1
         self.particle_signal_prev=True
+    #camera record for the button additional one:
+    def signal_Record(self):
+        self.cam.record()                                    # Start recording
+    #camera trigger for the button additional two:
+    def signal_Trigger(self):
+        print(self.cam.partition_recorded(1))
+        self.cam.trigger()                                       # trigger
+        while(self.cam.partition_recorded(1)==False):
+            pass
+        print(self.cam.trigger_delay)
+        cine1 = self.cam.Cine(1)                                 # make cine object for cine in ram we just recorded
+       #----------Task 1: read and display an image from the recorded cine------------
+        print(self.cam.partition_recorded(1))
+        image1 = [] #initilize 
+        test_range = utils.FrameRange(cine1.range.last_image-self.trigger_frames, cine1.range.last_image)  #set range, utils.FrameRange(int, int), this is how we create a FrameRange
+        image1 = cine1.get_images(test_range)         #get_images(Framerange), return 3d array for monochrome
+        img = np.squeeze(image1)
+        #plt.imshow(img[0])
+        #plt.show()
 
+        #----------Task 2: save the recording in a raw cine file. It can be played in PCC application-------- 
+
+        #cine1.save_dialog()
+        #use cine1.save() and give the path, format, and range we want to save.
+        cine1.save(filename = os.path.expanduser('~')+'\Desktop\Test\TestFile', format = utils.FileTypeEnum(0), range = utils.FrameRange(cine1.range.last_image-self.trigger_frames, cine1.range.last_image)) 
+
+        #---------Task 3: save the recording as a group of tif image files. 
+        #cine1.save_dialog()
+
+        cine1.save(filename = os.path.expanduser('~')+'\Desktop\Test\TestFile', format = utils.FileTypeEnum(-8), range = utils.FrameRange(cine1.range.last_image-self.trigger_frames, cine1.range.last_image)) 
     def stop(self):
         self.running = False
         #cv2.destroyAllWindows
@@ -165,6 +194,10 @@ class FrameCapture(QObject):
         self.main_window.ui.load_pages.but_trigger_next_cam.clicked.connect(self.trigger_particle_signal)
         #Capture the previous X frames
         self.main_window.ui.load_pages.but_trigger_previous_cam.clicked.connect(self.trigger_particle_signal_prev)
+        #start recording(in other words activating the capture button in the pcc software)
+        self.main_window.ui.load_pages.but_additional_1_cam.clicked.connect(self.additional_1_cam)
+        #start triggering(in other words activating the trigger button in the pcc software)
+        self.main_window.ui.load_pages.but_additional_2_cam.clicked.connect(self.additional_2_cam)
 
 
     #Start all the process, and read the parameters, be carefull after we need to be able to stop everything
@@ -176,7 +209,7 @@ class FrameCapture(QObject):
         self.ph.discover(print_list=True)  #[name, serial number, model, camera number]
 
         #Update parameters based on the GUI
-        self.cam.partition_count  = 1
+        self.cam.partition_count  = int(self.main_window.ui.load_pages.line_partition_count_cam.text())
         self.cam.frame_rate = int(self.main_window.ui.load_pages.line_frame_rate_cam.text())
         #Number of images to save
         self.trigger_frames = int(self.main_window.ui.load_pages.line_trigger_frame_cam.text())
@@ -196,6 +229,9 @@ class FrameCapture(QObject):
         self.main_window.ui.load_pages.line_frame_rate_cam.setText(str(frame_rate))                       
         exposure = self.cam.exposure    
         self.main_window.ui.load_pages.line_exposure_cam.setText(str(exposure))
+        partition_count = self.cam.partition_count
+        self.main_window.ui.load_pages.line_partition_count_cam.setText(str(partition_count))                       
+
 
         # Start recording
         self.cam.record()                                    # Start recording
@@ -237,4 +273,11 @@ class FrameCapture(QObject):
 
     def trigger_particle_signal_prev(self):
         self.worker_capture.signal_P_Prev()
+
+    def additional_1_cam(self):
+        self.worker_capture.signal_Record()
+    def additional_2_cam(self):
+        self.worker_capture.signal_Trigger()
+
+
 

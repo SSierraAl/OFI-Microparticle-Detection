@@ -65,9 +65,9 @@ print("%s exposure(us)" % (exposure))
 
 
 #Set parameters
-cam.resolution = (1920, 1080)                        #setting resolution
-cam.frame_rate = 100                                #setting framerate
-cam.post_trigger_frames = 30                         #setting post trigger frames
+cam.resolution = (640, 128)                        #setting resolution
+cam.frame_rate = 8000                                #setting framerate
+cam.post_trigger_frames = 100                         #setting post trigger frames
 cam.partition_count = 1                             #setting partition count 
 
 #Record 
@@ -80,7 +80,7 @@ cine1 = cam.Cine(1)                                 #make cine object for cine i
 #----------Task 1: read and display an image from the recorded cine------------
 
 image1 = [] #initilize 
-test_range = utils.FrameRange(cine1.range.last_image-10, cine1.range.last_image)  #set range, utils.FrameRange(int, int), this is how we create a FrameRange
+test_range = utils.FrameRange(cine1.range.last_image-50, cine1.range.last_image)  #set range, utils.FrameRange(int, int), this is how we create a FrameRange
 image1 = cine1.get_images(test_range)         #get_images(Framerange), return 3d array for monochrome
 img = np.squeeze(image1)
 #plt.imshow(img[0])
@@ -90,12 +90,12 @@ img = np.squeeze(image1)
 
 #cine1.save_dialog()
 #use cine1.save() and give the path, format, and range we want to save.
-cine1.save(filename = os.path.expanduser('~')+'\Desktop\Test\TestFile', format = utils.FileTypeEnum(0), range = utils.FrameRange(cine1.range.last_image-10, cine1.range.last_image)) 
+cine1.save(filename = os.path.expanduser('~')+'\Desktop\Test\TestFile', format = utils.FileTypeEnum(0), range = utils.FrameRange(cine1.range.last_image-50, cine1.range.last_image)) 
 
 #---------Task 3: save the recording as a group of tif image files. 
 #cine1.save_dialog()
 
-cine1.save(filename = os.path.expanduser('~')+'\Desktop\Test\TestFile', format = utils.FileTypeEnum(-8), range = utils.FrameRange(cine1.range.last_image-10, cine1.range.last_image)) 
+cine1.save(filename = os.path.expanduser('~')+'\Desktop\Test\TestFile', format = utils.FileTypeEnum(-8), range = utils.FrameRange(cine1.range.last_image-50, cine1.range.last_image)) 
 
 cam.close()                                    #unregister camera objects
 ph.close()                                     #unregister phantom() objects
