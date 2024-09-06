@@ -26,7 +26,7 @@ def Set_DAQ_Functions(self):
         #self.fileSave=int(self.ui.load_pages.lineEdit_FileSave.text())
         self.fileSave=int(2)
         self.number_of_samples=int(self.ui.load_pages.lineEdit_number_samples.text())
-        self.DAQ_Device="Dev3/ai0"
+        self.DAQ_Device="Dev1/ai0"
 
         # Band Pass Filter Params
         self.order_filter=4

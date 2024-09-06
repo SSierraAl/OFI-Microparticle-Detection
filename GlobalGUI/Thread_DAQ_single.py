@@ -46,7 +46,7 @@ class WorkerDAQ(QObject):
             print(f"INFO: Selected DAQ device: {self.DAQ_Device} ")
             task_Laser.ai_channels.add_ai_voltage_chan(self.DAQ_Device,max_val=5, min_val=-5)
             # Set Sampling clocks
-            task_Laser.timing.cfg_samp_clk_timing(rate=self.Laser_frequency, sample_mode=constants.AcquisitionType.CONTINUOUS)
+            task_Laser.timing.cfg_samp_clk_timing(rate=self.Laser_frequency, sample_mode=constants.AcquisitionType.CONTINUOUS,samps_per_chan=self.number_of_samples * 10)
             #Initialize Stream reader
             reader = AnalogSingleChannelReader(task_Laser.in_stream)
 
